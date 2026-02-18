@@ -34,7 +34,7 @@ https://github.com/vishnuu5/smart-bookmark-app.git
 
 ## [View Demo](https://smart-bookmark-app-opal-six.vercel.app)
 
-[Video Demo](https://www.loom.com/share/5c500f12ad49424188f70c068c70284d)
+[Loom Demo](https://www.loom.com/share/5c500f12ad49424188f70c068c70284d)
 
 ## Getting Started
 
