@@ -25,20 +25,22 @@ A modern, real-time bookmark management application built with Next.js 16, Supab
 - **Deployment**: Vercel
 
 ## Git Clone
+
 ```bash
 https://github.com/vishnuu5/smart-bookmark-app.git
 ```
 
 ## Demo Project
 
-[View Demo](https://smart-bookmark-app-opal-six.vercel.app)
-------------------------------------------------
-[Video Demo]()
+## [View Demo](https://smart-bookmark-app-opal-six.vercel.app)
+
+[Video Demo](https://www.loom.com/share/5c500f12ad49424188f70c068c70284d)
+
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or pnpm package manager
 - Supabase account and project
 
@@ -81,19 +83,20 @@ npm run dev
 ```
 
 5. **Open in browser**
-Navigate to `http://localhost:3000`
+   Navigate to `http://localhost:3000`
 
 ## Deployment on Vercel
 
 ### 1. Prepare for Deployment
 
 1. **Push to GitHub**
+
    ```bash
    git init
    git add .
    git commit -m "Initial commit"
    git branch -M master
-   git remote add origin 
+   git remote add origin
    git push -u origin master
    ```
 
@@ -107,17 +110,20 @@ Navigate to `http://localhost:3000`
 ### 2. Configure OAuth Redirect
 
 In your Google Cloud Console:
+
 - Add `https://your-vercel-app.vercel.app/auth/callback` to authorized redirect URLs
 - Add `http://localhost:3000/auth/callback` for local development
 
 ## How to Use
 
 ### Authentication
+
 1. Click **"Sign in with Google"** in the header
 2. Complete the Google OAuth flow
 3. You'll be redirected back to the app with your profile
 
 ### Adding a Bookmark
+
 1. Sign in with your Google account
 2. Click the **"+ Add Bookmark"** button in the left sidebar
 3. Fill in the bookmark details:
@@ -128,6 +134,7 @@ In your Google Cloud Console:
 4. Click **"Save Bookmark"**
 
 ### Managing Bookmarks
+
 - **Search**: Use the search bar at the top to find bookmarks
 - **Filter by Category**: Click a category in the left sidebar
 - **Open Link**: Click "Open" button to visit the bookmark
@@ -135,6 +142,7 @@ In your Google Cloud Console:
 - **Delete**: Click the X button to remove a bookmark
 
 ### Real-time Features
+
 - Open the app in multiple tabs
 - Add/edit/delete a bookmark in one tab
 - Changes appear instantly in all other tabs
@@ -143,6 +151,7 @@ In your Google Cloud Console:
 ### Categories
 
 Default categories included:
+
 - General
 - Work
 - Learning
@@ -162,6 +171,7 @@ More categories will appear automatically as you add bookmarks to new categories
 ## Database Schema
 
 The app uses a single `bookmarks` table with:
+
 - `id`: UUID primary key
 - `user_id`: Foreign key to auth.users (RLS enforced)
 - `title`: Bookmark title
@@ -174,36 +184,46 @@ The app uses a single `bookmarks` table with:
 ## Problems Faced & Solutions
 
 ### Challenge 1: Supabase Integration with Next.js App Router
+
 **Problem**: Supabase auth helpers were deprecated and incompatible with Next.js 16 App Router.
-**Solution**: 
+**Solution**:
+
 - Used direct Supabase client instead of deprecated auth helpers
 - Implemented custom auth service with proper session management
 - Created manual OAuth callback handler in `app/auth/callback/route.js`
 
 ### Challenge 2: Real-time Subscriptions
+
 **Problem**: Implementing real-time updates without complex state management.
 **Solution**:
+
 - Used Supabase real-time subscriptions with user-specific filtering
 - Implemented automatic re-fetching on database changes
 - Added proper subscription cleanup to prevent memory leaks
 
 ### Challenge 3: Environment Variables in Development
+
 **Problem**: `.gitignore` blocked creation of `.env.local` and `.env.example`.
 **Solution**:
+
 - Created `lib/supabase.js` with fallback values
 - Provided clear setup instructions in README
 - Used environment variables with sensible defaults
 
 ### Challenge 4: Row Level Security (RLS)
+
 **Problem**: Ensuring users can only access their own bookmarks.
 **Solution**:
+
 - Implemented comprehensive RLS policies for all CRUD operations
 - Added user_id filtering at database level
 - Used auth.uid() for secure user identification
 
 ### Challenge 5: OAuth Callback Handling
+
 **Problem**: Handling OAuth redirects properly in Next.js App Router.
 **Solution**:
+
 - Created dedicated route handler for OAuth callbacks
 - Implemented proper URL handling for development and production
 - Added error handling for failed OAuth flows
@@ -211,10 +231,13 @@ The app uses a single `bookmarks` table with:
 ## API Endpoints
 
 ### Authentication
+
 - `GET /auth/callback` - OAuth callback handler
 
 ### Database Operations
+
 All database operations are handled through Supabase client with RLS:
+
 - `bookmarkService.getUserBookmarks(userId)` - Get user's bookmarks
 - `bookmarkService.addBookmark(bookmark)` - Add new bookmark
 - `bookmarkService.updateBookmark(id, updates)` - Update bookmark
@@ -232,21 +255,25 @@ All database operations are handled through Supabase client with RLS:
 ## Troubleshooting
 
 ### Authentication Issues
+
 - Ensure Google OAuth is properly configured in Supabase
 - Check that redirect URLs match your deployment domain
 - Verify environment variables are set correctly
 
 ### Real-time Not Working
+
 - Check browser console for WebSocket errors
 - Ensure RLS policies are properly set up
 - Verify user is authenticated
 
 ### Database Errors
+
 - Run the schema.sql in Supabase SQL Editor
 - Check RLS policies are enabled
 - Verify user permissions
 
 ### Deployment Issues
+
 - Ensure all environment variables are set in Vercel
 - Check that OAuth redirect URLs include your domain
 - Verify Google OAuth configuration
