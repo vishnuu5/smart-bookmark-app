@@ -32,7 +32,8 @@ https://github.com/vishnuu5/smart-bookmark-app.git
 ## Demo Project
 
 [View Demo]()
-
+------------------------------------------------
+[Video Demo]()
 ## Getting Started
 
 ### Prerequisites
