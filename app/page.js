@@ -154,20 +154,20 @@ export default function Home() {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
         <Header onSearch={setSearchQuery} user={user} onAuthChange={setUser} />
-        <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+        <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem' }}>
           <div
             style={{
               textAlign: 'center',
-              padding: '4rem 2rem',
+              padding: '2rem 1rem',
               backgroundColor: '#ffffff',
               borderRadius: '0.5rem',
               border: '1px solid #e5e7eb',
             }}
           >
-            <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#1f2937', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1f2937', marginBottom: '1rem' }}>
               Welcome to Smart Bookmarks
             </h2>
-            <p style={{ fontSize: '1.125rem', color: '#6b7280', marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1rem', color: '#6b7280', marginBottom: '2rem' }}>
               Please sign in with Google to manage your bookmarks
             </p>
             {authError && (
@@ -195,16 +195,16 @@ export default function Home() {
     <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
       <Header onSearch={setSearchQuery} user={user} onAuthChange={setUser} />
 
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem' }}>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '250px 1fr',
-            gap: '2rem',
+            gridTemplateColumns: '1fr',
+            gap: '1.5rem',
           }}
         >
           {/* Sidebar */}
-          <aside>
+          <aside style={{ display: 'grid', gap: '1.5rem' }}>
             <BookmarkForm onAdd={addBookmark} />
             <CategoryFilter
               categories={categories}
@@ -237,7 +237,7 @@ export default function Home() {
               <div
                 style={{
                   textAlign: 'center',
-                  padding: '3rem',
+                  padding: '2rem 1rem',
                   backgroundColor: '#ffffff',
                   borderRadius: '0.5rem',
                   border: '1px solid #e5e7eb',

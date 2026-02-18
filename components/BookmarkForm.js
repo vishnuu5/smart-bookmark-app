@@ -31,12 +31,12 @@ export default function BookmarkForm({ onAdd }) {
   };
 
   return (
-    <div style={{ marginBottom: '2rem' }}>
+    <div style={{ marginBottom: '1.5rem' }}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         style={{
           width: '100%',
-          padding: '0.75rem',
+          padding: '0.625rem',
           backgroundColor: '#3b82f6',
           color: '#ffffff',
           border: 'none',
@@ -57,13 +57,13 @@ export default function BookmarkForm({ onAdd }) {
           onSubmit={handleSubmit}
           style={{
             marginTop: '1rem',
-            padding: '1rem',
+            padding: '0.75rem',
             backgroundColor: '#ffffff',
             borderRadius: '0.5rem',
             border: '1px solid #e5e7eb',
           }}
         >
-          <div style={{ marginBottom: '1rem' }}>
+          <div style={{ marginBottom: '0.75rem' }}>
             <label
               style={{
                 display: 'block',
@@ -92,7 +92,7 @@ export default function BookmarkForm({ onAdd }) {
             />
           </div>
 
-          <div style={{ marginBottom: '1rem' }}>
+          <div style={{ marginBottom: '0.75rem' }}>
             <label
               style={{
                 display: 'block',
@@ -121,7 +121,7 @@ export default function BookmarkForm({ onAdd }) {
             />
           </div>
 
-          <div style={{ marginBottom: '1rem' }}>
+          <div style={{ marginBottom: '0.75rem' }}>
             <label
               style={{
                 display: 'block',
@@ -155,7 +155,7 @@ export default function BookmarkForm({ onAdd }) {
             </select>
           </div>
 
-          <div style={{ marginBottom: '1.5rem' }}>
+          <div style={{ marginBottom: '1rem' }}>
             <label
               style={{
                 display: 'block',
@@ -179,7 +179,7 @@ export default function BookmarkForm({ onAdd }) {
                 borderRadius: '0.375rem',
                 fontSize: '0.875rem',
                 boxSizing: 'border-box',
-                minHeight: '80px',
+                minHeight: '60px',
                 fontFamily: 'inherit',
               }}
             />

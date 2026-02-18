@@ -31,19 +31,19 @@ export default function AuthButton({ user, onAuthChange }) {
 
   if (user) {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <img
             src={user.user_metadata?.avatar_url || `https://ui-avatars.com/api/?name=${user.email}&background=3b82f6&color=fff`}
             alt="User avatar"
             style={{
-              width: '32px',
-              height: '32px',
+              width: '28px',
+              height: '28px',
               borderRadius: '50%',
               border: '2px solid #ffffff',
             }}
           />
-          <span style={{ fontSize: '0.875rem', fontWeight: '500' }}>
+          <span style={{ fontSize: '0.75rem', fontWeight: '500', display: 'none' }}>
             {user.user_metadata?.full_name || user.email}
           </span>
         </div>
@@ -51,18 +51,18 @@ export default function AuthButton({ user, onAuthChange }) {
           onClick={handleSignOut}
           disabled={loading}
           style={{
-            padding: '0.5rem 1rem',
+            padding: '0.375rem 0.75rem',
             backgroundColor: '#ffffff',
             color: '#3b82f6',
             border: 'none',
             borderRadius: '0.375rem',
-            fontSize: '0.875rem',
+            fontSize: '0.75rem',
             fontWeight: '500',
             cursor: loading ? 'not-allowed' : 'pointer',
             opacity: loading ? 0.7 : 1,
           }}
         >
-          {loading ? 'Signing out...' : 'Sign Out'}
+          {loading ? '...' : 'Out'}
         </button>
       </div>
     );
@@ -73,12 +73,12 @@ export default function AuthButton({ user, onAuthChange }) {
       onClick={handleSignIn}
       disabled={loading}
       style={{
-        padding: '0.75rem 1.5rem',
+        padding: '0.5rem 1rem',
         backgroundColor: '#ffffff',
         color: '#3b82f6',
         border: 'none',
         borderRadius: '0.375rem',
-        fontSize: '0.875rem',
+        fontSize: '0.75rem',
         fontWeight: '500',
         cursor: loading ? 'not-allowed' : 'pointer',
         display: 'flex',

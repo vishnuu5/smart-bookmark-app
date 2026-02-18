@@ -44,7 +44,7 @@ export default function BookmarkCard({ bookmark, onDelete, onUpdate }) {
         backgroundColor: '#ffffff',
         borderRadius: '0.5rem',
         border: '1px solid #e5e7eb',
-        padding: '1.5rem',
+        padding: '1rem',
         transition: 'all 0.2s',
         boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
       }}

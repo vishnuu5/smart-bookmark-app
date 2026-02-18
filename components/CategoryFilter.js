@@ -24,7 +24,7 @@ export default function CategoryFilter({
             key={category}
             onClick={() => onSelectCategory(category)}
             style={{
-              padding: '0.75rem 1rem',
+              padding: '0.625rem 0.875rem',
               textAlign: 'left',
               border: 'none',
               borderRadius: '0.375rem',
